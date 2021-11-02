@@ -19,7 +19,7 @@ public class PDF2IMAGE {
      * PDF文件转PNG图片，全部页数
      *
      * @param PdfFilePath pdf完整路径
-     * @param imgFilePath 图片存放的文件夹
+     * @param dstImgFolder 图片存放的文件夹
      * @param dpi dpi越大转换后越清晰，相对转换速度越慢
      * @return
      */
@@ -46,6 +46,7 @@ public class PDF2IMAGE {
                 int pages = reader.getNumberOfPages();
                 StringBuffer imgFilePath = null;
                 for (int i = 0; i < pages; i++) {
+                    System.out.println("已转换第"+ i +"张");
                     String imgFilePathPrefix = imgFolderPath + File.separator + imagePDFName;
                     imgFilePath = new StringBuffer();
                     imgFilePath.append(imgFilePathPrefix);
